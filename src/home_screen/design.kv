@@ -7,26 +7,24 @@
             id:_sli_
             size_hint:None,None
 
-    AnchorLayout:
-        anchor_x:'center'
-        anchor_y:'bottom'
 
-        StartButton:
-            id:_start_bt 
-            size_hint:None,None   
+    StartButton:
+        id:_start_bt 
+        size_hint:None,None 
+        pos_hint:{'x':.35,'y':.2}
 
 <Welcome@RelativeLayout>:
     Label:
         markup:True
         text:'[size=40px] [color=#ff99cc] Welcome[/color] [i]To[/i] \n [size=80px] [b] [color=#336699]SLI [/b][/color][/size]'
 
-<ToolButton@ToggleButton>
-    size_hint:None,None
-    size:100,50
+    
 <StartButton@GridLayout>:
     cols:1
     padding:2
-    ToolButton:
+    Button:
+        size_hint:None,None
+        size:100,50
         background_color: 1, 0, 0, 1
         text:"START"
 
