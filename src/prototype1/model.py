@@ -48,4 +48,6 @@ def predict():
         input_img=ImageDataGenerator(rescale=1./255).flow_from_directory(img_dir,target_size=(64,64),class_mode=None)
         predications=model.predict(input_img)
         predications = np.argmax(predications, axis=1)
-        print(labels.get(str(predications[0])))
+        predicted_label=labels.get(str(predications[0]))
+
+        return predicted_label
