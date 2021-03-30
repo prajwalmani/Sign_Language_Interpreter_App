@@ -1,11 +1,14 @@
 from kivy.app import App
+from kivy.uix.image import *
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager,Screen
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.image import Image,AsyncImage
 from kivy.uix.label import Label
-from vedio import *
+from imageandmodelhander import *
+from kivy.uix.widget import Widget
+
 
 Builder.load_file("design.kv")
 
@@ -22,21 +25,26 @@ class SecScreen(Screen):
         count=1
         camera.export_to_png("./SLI_{}.png".format(count))
         # img=AsyncImage(source='https://miro.medium.com/max/1050/1*kuqOPIyFNy9P-lLR3JiuMQ.png')
-        predict("SLI_1.png")
+        image_prepocess("SLI_1.png")
+        
         print("captured")
         
 
     def back(self):
         self.manager.current="Sign_lang"
-
+    
     def third_screen(self):
        # predict("SLI_1.png")
-        self.manager.current="Third_sec"    
+        self.manager.current="Third_sec"
+    
+    
 
 class ThirdScreen(Screen):
     
     def back(self):
         self.manager.current="Sign_lang"
+        
+    
 
 
 class RootWidget(ScreenManager):

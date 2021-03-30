@@ -1,21 +1,56 @@
 import cv2
-def predict(name):
-    face_cascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+import os 
+import modelhander as md
 
-    # img=cv2.imread("news.jpg")  
-    # new image as input 
-
+def image_prepocess(name):
+    
     img=cv2.imread(name)
+     
+    # path handling 
+    path=r"C:\Users\prajw\OneDrive\Desktop\Github\Sign_Language_Interpreter\src\proto_type_1\img_buffer\img_buffer"
+    path2=r"C:\Users\prajw\OneDrive\Desktop\Github\Sign_Language_Interpreter\src\proto_type_1\img_buffer"
+    path3=r"C:\Users\prajw\OneDrive\Desktop\Github\Sign_Language_Interpreter\src\proto_type_1\classi_img_buffer"
+    cv2.imwrite(os.path.join(path,"classifed.png"),img)
 
-    gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    predicted_string=str(md.predict(path2))
 
-    face=face_cascade.detectMultiScale(gray_img,scaleFactor=1.05,minNeighbors=5)
+    font=cv2.FONT_HERSHEY_COMPLEX
+    fontScale=1
+    color = (0, 255, 0)
+    org = (50, 50)
+    thickness = 2
+    image=cv2.putText(
+        img,
+        predicted_string,
+        org,
+        font,
+        fontScale,
+        color,
+        thickness,
+        cv2.LINE_AA
+    )
 
-    for x,y,w,h in face:
-        imag=cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,4,0),5)
-
-    resized_img=cv2.resize(imag,(int(imag.shape[1]/3),int(imag.shape[0]/3)))
+    cv2.imwrite(os.path.join(path3,"detected.png"),image)
 
 
-    cv2.imwrite("classified.png",resized_img)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # resized_img=cv2.resize(imag,(int(imag.shape[1]/3),int(imag.shape[0]/3)))
+    # cv2.imwrite("classified.png",resized_img)
 

@@ -61,12 +61,12 @@
 <ThirdScreen>:
     BoxLayout:
         AsyncImage:
-            source:'classified.png'
+            remove_from_cache: True
+            reload:True 
+            source: r'C:\Users\prajw\OneDrive\Desktop\Github\Sign_Language_Interpreter\src\proto_type_1\classi_img_buffer\detected.png'
             allow_stretch:True
            # source:'SLI_1.png'
             keep_ratio:True
-            reload:True 
-
     Button:
         text:'Home'  
         size_hint_y:None
