@@ -82,4 +82,3 @@ accuracy_precentage=(count/len(filenames))*100
 
 print("The total number of classes is {}".format(len(filenames)))
 print("The final accuracy of VGG16 is {}".format(accuracy_precentage))
-print(count)
