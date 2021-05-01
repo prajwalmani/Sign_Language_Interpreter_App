@@ -22,6 +22,8 @@ while True:
             cv2.imwrite(imgname, frame)
             cv2.imshow('frame', frame)
             time.sleep(2)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                 break
         c.release()
     
     
