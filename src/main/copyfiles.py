@@ -1,9 +1,10 @@
 import os 
 import stat
+import time 
 
-directory=r"C:\Users\prajw\OneDrive\Desktop\Giphyjs\Dataset"
-train_dir=r"C:\Users\prajw\OneDrive\Desktop\Giphyjs\data\train"
-test_dir=r"C:\Users\prajw\OneDrive\Desktop\Giphyjs\data\test"
+directory=r"capturedatasets"
+train_dir=r"train"
+test_dir=r"test"
 
 for root,dirs,files in os.walk(directory):
     count=1
@@ -20,3 +21,4 @@ for root,dirs,files in os.walk(directory):
             os.system('copy {0} {1}'.format(path,test_path))
         print("We are in {}".format(count))
         count+=1
+    time.sleep(5)
