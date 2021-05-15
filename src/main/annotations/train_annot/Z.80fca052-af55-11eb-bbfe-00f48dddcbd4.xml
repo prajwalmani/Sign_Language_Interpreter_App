@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>Z.80fca052-af55-11eb-bbfe-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\Z.80fca052-af55-11eb-bbfe-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Z</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>194</xmin>
+			<ymin>200</ymin>
+			<xmax>392</xmax>
+			<ymax>422</ymax>
+		</bndbox>
+	</object>
+</annotation>

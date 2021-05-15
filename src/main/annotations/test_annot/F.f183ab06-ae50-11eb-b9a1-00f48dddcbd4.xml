@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>F.f183ab06-ae50-11eb-b9a1-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\F.f183ab06-ae50-11eb-b9a1-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>F</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>126</xmin>
+			<ymin>34</ymin>
+			<xmax>413</xmax>
+			<ymax>475</ymax>
+		</bndbox>
+	</object>
+</annotation>

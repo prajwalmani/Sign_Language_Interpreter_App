@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>K.887148b0-ae67-11eb-9984-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\K.887148b0-ae67-11eb-9984-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>K</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>289</xmin>
+			<ymin>150</ymin>
+			<xmax>545</xmax>
+			<ymax>435</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>Sorry.7afa86d8-b2ed-11eb-97fe-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\Sorry.7afa86d8-b2ed-11eb-97fe-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Sorry</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>247</xmin>
+			<ymin>193</ymin>
+			<xmax>501</xmax>
+			<ymax>408</ymax>
+		</bndbox>
+	</object>
+</annotation>

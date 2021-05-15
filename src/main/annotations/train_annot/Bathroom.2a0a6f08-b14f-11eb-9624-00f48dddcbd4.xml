@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>Bathroom.2a0a6f08-b14f-11eb-9624-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\Bathroom.2a0a6f08-b14f-11eb-9624-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Bathroom</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>284</xmin>
+			<ymin>161</ymin>
+			<xmax>416</xmax>
+			<ymax>357</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>U.43247812-af26-11eb-9356-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\U.43247812-af26-11eb-9356-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>U</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>145</xmin>
+			<ymin>184</ymin>
+			<xmax>255</xmax>
+			<ymax>361</ymax>
+		</bndbox>
+	</object>
+</annotation>

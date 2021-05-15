@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>Z.d70ff7dc-af54-11eb-b92e-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\Z.d70ff7dc-af54-11eb-b92e-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Z</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>244</xmin>
+			<ymin>188</ymin>
+			<xmax>363</xmax>
+			<ymax>347</ymax>
+		</bndbox>
+	</object>
+</annotation>

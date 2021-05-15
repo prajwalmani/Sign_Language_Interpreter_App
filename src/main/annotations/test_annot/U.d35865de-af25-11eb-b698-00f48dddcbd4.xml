@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>U.d35865de-af25-11eb-b698-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\U.d35865de-af25-11eb-b698-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>U</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>273</xmin>
+			<ymin>176</ymin>
+			<xmax>384</xmax>
+			<ymax>351</ymax>
+		</bndbox>
+	</object>
+</annotation>

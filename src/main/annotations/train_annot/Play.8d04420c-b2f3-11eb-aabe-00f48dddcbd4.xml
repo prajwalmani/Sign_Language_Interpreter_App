@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>Play.8d04420c-b2f3-11eb-aabe-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\Play.8d04420c-b2f3-11eb-aabe-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Play</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>63</xmin>
+			<ymin>125</ymin>
+			<xmax>550</xmax>
+			<ymax>477</ymax>
+		</bndbox>
+	</object>
+</annotation>

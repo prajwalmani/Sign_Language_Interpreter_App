@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>Sorry.f554bccc-b2ed-11eb-a446-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\Sorry.f554bccc-b2ed-11eb-a446-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Sorry</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>227</xmin>
+			<ymin>186</ymin>
+			<xmax>504</xmax>
+			<ymax>403</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>Hurt.41ff58d4-b266-11eb-873c-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\Hurt.41ff58d4-b266-11eb-873c-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Hurt</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>176</xmin>
+			<ymin>331</ymin>
+			<xmax>445</xmax>
+			<ymax>435</ymax>
+		</bndbox>
+	</object>
+</annotation>

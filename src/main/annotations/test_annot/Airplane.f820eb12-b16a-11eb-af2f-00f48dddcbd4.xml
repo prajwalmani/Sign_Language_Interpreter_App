@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>Airplane.f820eb12-b16a-11eb-af2f-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\Airplane.f820eb12-b16a-11eb-af2f-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Airoplane</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>60</xmin>
+			<ymin>43</ymin>
+			<xmax>526</xmax>
+			<ymax>341</ymax>
+		</bndbox>
+	</object>
+</annotation>

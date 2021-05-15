@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>Q.d2250fa4-af09-11eb-bb1a-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\Q.d2250fa4-af09-11eb-bb1a-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Q</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>298</xmin>
+			<ymin>158</ymin>
+			<xmax>532</xmax>
+			<ymax>459</ymax>
+		</bndbox>
+	</object>
+</annotation>

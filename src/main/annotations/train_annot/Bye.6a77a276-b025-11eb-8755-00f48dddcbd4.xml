@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>Bye.6a77a276-b025-11eb-8755-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\Bye.6a77a276-b025-11eb-8755-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Bye</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>138</xmin>
+			<ymin>177</ymin>
+			<xmax>348</xmax>
+			<ymax>463</ymax>
+		</bndbox>
+	</object>
+</annotation>

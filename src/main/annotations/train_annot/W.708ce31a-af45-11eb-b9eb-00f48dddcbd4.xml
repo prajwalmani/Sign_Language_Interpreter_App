@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>W.708ce31a-af45-11eb-b9eb-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\W.708ce31a-af45-11eb-b9eb-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>W</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>99</ymin>
+			<xmax>105</xmax>
+			<ymax>355</ymax>
+		</bndbox>
+	</object>
+</annotation>

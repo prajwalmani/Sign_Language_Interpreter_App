@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>M.defa78c6-aef1-11eb-8c1f-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\M.defa78c6-aef1-11eb-8c1f-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>M</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>244</xmin>
+			<ymin>203</ymin>
+			<xmax>351</xmax>
+			<ymax>337</ymax>
+		</bndbox>
+	</object>
+</annotation>
