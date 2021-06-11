@@ -1,4 +1,5 @@
 package com.example.sli;
+import com.example.sli.ml.Model;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +20,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.flatbuffers.ByteBufferUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
+import java.util.List;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
@@ -31,7 +38,8 @@ import org.tensorflow.lite.support.image.ImageProcessor;
 import org.tensorflow.lite.support.image.TensorImage;
 import org.tensorflow.lite.support.image.ops.ResizeOp;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
-import org.tensorflow.lite.support.model.Model;
+//import org.tensorflow.lite.support.model.Model;
+
 
 
 
@@ -39,10 +47,7 @@ public class predictactivity extends AppCompatActivity {
     Button camerabtn;
     ImageView imageView;
     static final int CAM_REQUEST=1;
-    private int mInputSize=224;
-    private String mModelPath="model.tflite";
-    private String mLabelPath="label.txt";
-    private Classifier classifier;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,28 +77,28 @@ public class predictactivity extends AppCompatActivity {
             Bundle bundle=data.getExtras();
             Bitmap captureimage = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(captureimage);
-//            ImageProcessor imageProcessor =
-//                    new ImageProcessor.Builder()
-//                            .add(new ResizeOp(64, 64, ResizeOp.ResizeMethod.BILINEAR))
-//                            .build();
-//            TensorImage tensorImage = new TensorImage(DataType.UINT8);
-//            tensorImage.load(captureimage);
-//            tensorImage = imageProcessor.process(tensorImage);
-//            TensorBuffer probabilityBuffer =
-//                    TensorBuffer.createFixedSize(new int[]{1, 1001}, DataType.UINT8);
-//            try{
-//                MappedByteBuffer tfliteModel
-//                        = FileUtil.loadMappedFile(activity,
-//                        "model.tflite");
-//                Interpreter tflite = new Interpreter(tfliteModel);
-//            } catch (IOException e){
-//                Log.e("tfliteSupport", "Error reading model", e);
-//            }
-//
-//// Running inference
-//            if(null != tflite) {
-//                tflite.run(tImage.getBuffer(), probabilityBuffer.getBuffer());
-//            }
+            Bitmap img =Bitmap.createScaledBitmap(captureimage,64,64,true);
+            try {
+                Model model = Model.newInstance(getApplicationContext());
+
+                // Creates inputs for reference.
+                TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 64, 64, 3}, DataType.FLOAT32);
+                TensorImage tensorImage= new TensorImage(DataType.FLOAT32);
+                tensorImage.load(img);
+                ByteBuffer byteBuffer=tensorImage.getBuffer();
+                inputFeature0.loadBuffer(byteBuffer);
+
+                // Runs model inference and gets result.
+                Model.Outputs outputs = model.process(inputFeature0);
+                TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
+                textView.setText(outputFeature0.getFloatArray()[0]+"\n"+outputFeature0.getFloatArray()[1]);
+
+
+                // Releases model resources if no longer used.
+                model.close();
+            } catch (IOException e) {
+                // TODO Handle the exception
+            }
 
 
         }
