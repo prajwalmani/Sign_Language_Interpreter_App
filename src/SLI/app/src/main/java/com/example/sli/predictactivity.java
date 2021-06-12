@@ -1,53 +1,41 @@
 package com.example.sli;
 import com.example.sli.ml.Model;
 
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.flatbuffers.ByteBufferUtil;
-
-import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.nio.MappedByteBuffer;
-import java.util.List;
+import java.util.Locale;
 
+import java.lang.AutoCloseable;
 import org.tensorflow.lite.DataType;
-import org.tensorflow.lite.Interpreter;
-import org.tensorflow.lite.support.common.FileUtil;
-import org.tensorflow.lite.support.image.ImageProcessor;
 import org.tensorflow.lite.support.image.TensorImage;
-import org.tensorflow.lite.support.image.ops.ResizeOp;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
-//import org.tensorflow.lite.support.model.Model;
-
-
+import android.speech.tts.TextToSpeech;
 
 
 public class predictactivity extends AppCompatActivity {
     Button camerabtn;
     ImageView imageView;
-    static final int CAM_REQUEST=1;
     TextView textView;
+    TextToSpeech textToSpeech;
+
+//    public interface NDArray
+//            extends java.lang.AutoCloseable{
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +43,7 @@ public class predictactivity extends AppCompatActivity {
         setContentView(R.layout.activity_predictactivity);
         camerabtn=(Button)findViewById(R.id.camerabtn);
         imageView=(ImageView)findViewById(R.id.imageView);
+        textView=findViewById(R.id.txtview);
         if (ContextCompat.checkSelfPermission(predictactivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(predictactivity.this,new String[]{
                     Manifest.permission.CAMERA},
@@ -68,7 +57,26 @@ public class predictactivity extends AppCompatActivity {
                 startActivityForResult(intent,100);
             }
         });
+
+// Text to Speech
+        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int i) {
+                if(i!=TextToSpeech.ERROR){
+                    textToSpeech.setLanguage(Locale.UK);
+                }
+            }
+        });
     }
+//    public static int argmax(float[] args) {
+//        int result;
+//        result = 0;
+//        for (int i = 1; i < args.length; i++) {
+//            if (Float.compare(args[result], args[i]) < 0)
+//                result = i;
+//        }
+//        return result;
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -91,8 +99,15 @@ public class predictactivity extends AppCompatActivity {
                 // Runs model inference and gets result.
                 Model.Outputs outputs = model.process(inputFeature0);
                 TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
-                textView.setText(outputFeature0.getFloatArray()[0]+"\n"+outputFeature0.getFloatArray()[1]);
+                String varibletype = outputFeature0.getClass().getSimpleName();
+//                textView.setText();
 
+//                int labelvalue=argmax(outputFeature0.getFloatArray());
+//                NDArray ndArray= (NDArray) outputFeature0;
+
+//                textView.setText(outputFeature0.getFloatArray()[0]+"\n"+outputFeature0.getFloatArray()[1]+"\n"+outputFeature0.getFloatArray()[2]+"\n"+outputFeature0.getFloatArray()[3]+"\n"+outputFeature0.getFloatArray()[4]);
+//                textView.setText(Integer.toString(labelvalue));
+//                textToSpeech.speak(Integer.toString(labelvalue),TextToSpeech.QUEUE_FLUSH,null);
 
                 // Releases model resources if no longer used.
                 model.close();

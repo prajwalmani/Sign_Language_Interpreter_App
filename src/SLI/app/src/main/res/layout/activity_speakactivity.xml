@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".speakactivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Speak Page "
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="416dp"
+        android:layout_height="730dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

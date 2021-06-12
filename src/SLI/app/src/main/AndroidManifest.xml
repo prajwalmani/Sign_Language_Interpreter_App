@@ -5,7 +5,8 @@
     <uses-feature android:name="android.hardware.camera2" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-sdk android:minSdkVersion="21"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+<!--    <uses-sdk android:minSdkVersion="21"/>-->
 
     <application
         android:allowBackup="true"
