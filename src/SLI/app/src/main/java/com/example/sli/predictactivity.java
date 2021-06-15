@@ -16,11 +16,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
 import java.util.Locale;
 
-import java.lang.AutoCloseable;
+
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.image.TensorImage;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
@@ -32,10 +40,6 @@ public class predictactivity extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
     TextToSpeech textToSpeech;
-
-//    public interface NDArray
-//            extends java.lang.AutoCloseable{
-//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,15 +72,124 @@ public class predictactivity extends AppCompatActivity {
             }
         });
     }
-//    public static int argmax(float[] args) {
-//        int result;
-//        result = 0;
-//        for (int i = 1; i < args.length; i++) {
-//            if (Float.compare(args[result], args[i]) < 0)
-//                result = i;
-//        }
-//        return result;
-//    }
+    public static int argmax(float[] args) {
+        int result;
+        result = 0;
+        for (int i = 1; i < args.length; i++) {
+            if (Float.compare(args[result], args[i]) < 0)
+                result = i;
+        }
+        return result;
+    }
+
+    public String readlabelfile(int pos){
+        String label;
+        File labelfile=new File("assets/","labels.txt");
+        ArrayList<String> labellist=new ArrayList<String>();
+        try{
+            FileInputStream fin=new FileInputStream(labelfile);
+            DataInputStream din=new DataInputStream(fin);
+            BufferedReader bin=new BufferedReader(new InputStreamReader(din));
+            String strline;
+            while ((strline=bin.readLine())!=null){
+                ArrayList<String> buff=new ArrayList<String>();
+                buff.add(strline);
+                labellist.addAll(buff);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return labellist.get(pos);
+    }
+
+
+    public String labelcond(int pos){
+//        I was jobless and bored so took this approch
+        if(pos==0)
+            return "A";
+        else if(pos==1)
+            return "Airplane";
+        else if(pos==2)
+            return "B";
+        else if(pos==3)
+            return "Bathroom";
+        else if(pos==4)
+            return "Bye";
+        else if(pos==5)
+            return "C";
+        else if(pos==6)
+            return "D";
+        else if(pos==7)
+            return "E";
+        else if(pos==8)
+            return "F";
+        else if(pos==9)
+            return "G";
+        else if(pos==10)
+            return "H";
+        else if(pos==11)
+            return "Hello";
+        else if(pos==12)
+            return "Help";
+        else if(pos==13)
+            return "Hurt";
+        else if(pos==14)
+            return "I";
+        else if(pos==15)
+            return "I Love You";
+        else if(pos==16)
+            return "J";
+        else if(pos==17)
+            return "K";
+        else if(pos==18)
+            return "L";
+        else if(pos==19)
+            return "M";
+        else if(pos==20)
+            return "More";
+        else  if(pos==21)
+            return "N";
+        else  if(pos==22)
+            return "No";
+        else  if(pos==23)
+            return "O";
+        else  if(pos==24)
+            return "P";
+        else  if(pos==25)
+            return "Play";
+        else  if(pos==26)
+            return "Q";
+        else if(pos==27)
+            return "R";
+        else  if(pos==28)
+            return "S";
+        else if(pos==29)
+            return "Something";
+        else if(pos==30)
+            return "Sorry";
+        else if(pos==31)
+            return "T";
+        else if(pos==32)
+            return "Thank You";
+        else if(pos==33)
+            return "U";
+        else if(pos==34)
+            return "V";
+        else if(pos==35)
+            return "W";
+        else if(pos==36)
+            return "X";
+        else if(pos==37)
+            return "Y";
+        else if(pos==38)
+            return "Yes";
+        else if(pos==39)
+            return "Z";
+        else
+            return "Try Again!";
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -99,23 +212,16 @@ public class predictactivity extends AppCompatActivity {
                 // Runs model inference and gets result.
                 Model.Outputs outputs = model.process(inputFeature0);
                 TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
-                String varibletype = outputFeature0.getClass().getSimpleName();
-//                textView.setText();
-
-//                int labelvalue=argmax(outputFeature0.getFloatArray());
-//                NDArray ndArray= (NDArray) outputFeature0;
-
-//                textView.setText(outputFeature0.getFloatArray()[0]+"\n"+outputFeature0.getFloatArray()[1]+"\n"+outputFeature0.getFloatArray()[2]+"\n"+outputFeature0.getFloatArray()[3]+"\n"+outputFeature0.getFloatArray()[4]);
-//                textView.setText(Integer.toString(labelvalue));
-//                textToSpeech.speak(Integer.toString(labelvalue),TextToSpeech.QUEUE_FLUSH,null);
+                int labelpos=argmax(outputFeature0.getFloatArray());
+                String label=labelcond(labelpos);
+                textView.setText(label);
+                textToSpeech.speak(label,TextToSpeech.QUEUE_FLUSH,null);
 
                 // Releases model resources if no longer used.
                 model.close();
             } catch (IOException e) {
                 // TODO Handle the exception
             }
-
-
         }
     }
 }
