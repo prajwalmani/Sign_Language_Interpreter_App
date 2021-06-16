@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button predictbtn;
     private Button speakbtn;
+    private Button aboutusbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
         speakbtn=(Button)findViewById(R.id.speakbtn);
         speakbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 openspeakactiv();
             }
 
+        });
+
+        aboutusbtn=findViewById(R.id.aboutusbtn);
+        aboutusbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                opensboutusactiv();
+            }
         });
 
     }
@@ -44,5 +55,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent =new Intent(this,speakactivity.class);
         startActivity(intent);
 
+    }
+
+    public void opensboutusactiv(){
+        Intent intent=new Intent(this,aboutusactivity.class);
+        startActivity(intent);
     }
 }

@@ -6,36 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gihpy</title>
 </head>
-<body onload="giphy('Hello')" style="margin-left:-2.5%;">
-<div class="out" id="out"></div>
+<body style="margin-left:-2.5%;">
+<div class="out" id="out">
+    <h1>Please</h1>
+    <h1>Enter Your word</h1>
+    <h1>Or</h1>
+    <h1>Record the word</h1>
+    <h1>To see get the sign of it!</h1>
+    <h1></h1>
+</div>
 </body>
-<script>
-    function giphy(andriodsearchterm) {
-    document.getElementById("out").innerHTML = ""
-    var s=andriodsearchterm
-    var author="@signwithrobert"
-    var search_term=author.concat(" ",s)
-    let apikey="DsCHXY2CPBGbdeWb6dJ1QFF1W0GWDr8A";
-    let url=`https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=1&q=`
-    url=url.concat(search_term)
-    console.log(url)
-    fetch(url)
-    .then(response => response.json())
-    .then(content=>{
-        let fig = document.createElement("figure");
-        let img = document.createElement("img");
-        let fc = document.createElement("figcaption");
-        img.src = content.data[0].images.downsized.url;
-        fig.appendChild(img);
-        let out = document.querySelector(".out");
-        out.insertAdjacentElement("afterbegin", fig);
-    })
-    .catch(err=>{
-        document.getElementById("out").innerHTML = "<h2>Oops! We didn't find the sign for your search term</h2>"
-    }
-        )
-}
-
-
-</script>
+<script src="giphy.js"></script>
 </html>

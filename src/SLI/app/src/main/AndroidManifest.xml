@@ -3,12 +3,10 @@
     package="com.example.sli">
 
     <uses-feature android:name="android.hardware.camera2" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-<!--    <uses-sdk android:minSdkVersion="19"/>-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SLI">
+        <activity
+            android:name=".aboutusactivity"
+            android:label="@string/title_activity_aboutusactivity"
+            android:theme="@style/Theme.SLI.NoActionBar"></activity>
         <activity android:name=".speakactivity" />
         <activity android:name=".predictactivity" />
         <activity android:name=".MainActivity">
