@@ -11,7 +11,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button predictbtn;
     private Button speakbtn;
+    private Button learnbtn;
     private Button aboutusbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 openspeakactiv();
             }
 
+        });
+
+        learnbtn=findViewById(R.id.learnbtn);
+        learnbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openlearnactiv();
+            }
         });
 
         aboutusbtn=findViewById(R.id.aboutusbtn);
@@ -57,8 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openlearnactiv(){
+        Intent intent=new Intent(this,learnactivity.class);
+        startActivity(intent);
+    }
+
     public void opensboutusactiv(){
-        Intent intent=new Intent(this,aboutusactivity.class);
+        Intent intent=new Intent(this,aboutusactivitiy.class);
         startActivity(intent);
     }
 }

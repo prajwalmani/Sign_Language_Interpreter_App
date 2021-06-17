@@ -15,10 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SLI">
-        <activity
-            android:name=".aboutusactivity"
-            android:label="@string/title_activity_aboutusactivity"
-            android:theme="@style/Theme.SLI.NoActionBar"></activity>
+        <activity android:name=".learnactivity"></activity>
+        <activity android:name=".aboutusactivitiy" />
         <activity android:name=".speakactivity" />
         <activity android:name=".predictactivity" />
         <activity android:name=".MainActivity">
