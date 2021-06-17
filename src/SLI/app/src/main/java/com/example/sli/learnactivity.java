@@ -1,27 +1,36 @@
 package com.example.sli;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
+
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-public class learnactivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class learnactivity<counter> extends AppCompatActivity {
     RelativeLayout relativeLayout;
-    TextView textview;
+    ImageView imgviewgal;
     SwipeListner swipeListner;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learnactivity);
         relativeLayout=findViewById(R.id.relativelayout);
-        textview=findViewById(R.id.textView2);
         swipeListner=new SwipeListner(relativeLayout);
+        imgviewgal=findViewById(R.id.imgviewgal);
+        imgviewgal.setImageDrawable(getDrawable(R.drawable.alpsign0));
     }
 
     private class SwipeListner implements View.OnTouchListener {
@@ -30,8 +39,36 @@ public class learnactivity extends AppCompatActivity {
         SwipeListner(View view){
             int threshold=100;
             int velocity_thtrshold=100;
-
-
+            final int[] count = {0};
+            progress(count[0]);
+            ArrayList<Integer> resourceidlist=new ArrayList<>();
+            resourceidlist.add(R.drawable.alpsign0);
+            resourceidlist.add(R.drawable.alpsign1);
+            resourceidlist.add(R.drawable.alpsign2);
+            resourceidlist.add(R.drawable.alpsign3);
+            resourceidlist.add(R.drawable.alpsign4);
+            resourceidlist.add(R.drawable.alpsign5);
+            resourceidlist.add(R.drawable.alpsign6);
+            resourceidlist.add(R.drawable.alpsign7);
+            resourceidlist.add(R.drawable.alpsign8);
+            resourceidlist.add(R.drawable.alpsign9);
+            resourceidlist.add(R.drawable.alpsign10);
+            resourceidlist.add(R.drawable.alpsign11);
+            resourceidlist.add(R.drawable.alpsign12);
+            resourceidlist.add(R.drawable.alpsign13);
+            resourceidlist.add(R.drawable.alpsign14);
+            resourceidlist.add(R.drawable.alpsign15);
+            resourceidlist.add(R.drawable.alpsign16);
+            resourceidlist.add(R.drawable.alpsign17);
+            resourceidlist.add(R.drawable.alpsign18);
+            resourceidlist.add(R.drawable.alpsign19);
+            resourceidlist.add(R.drawable.alpsign20);
+            resourceidlist.add(R.drawable.alpsign21);
+            resourceidlist.add(R.drawable.alpsign22);
+            resourceidlist.add(R.drawable.alpsign23);
+            resourceidlist.add(R.drawable.alpsign24);
+            resourceidlist.add(R.drawable.alpsign25);
+            resourceidlist.add(R.drawable.alpsign26);
             GestureDetector.SimpleOnGestureListener listener=new GestureDetector.SimpleOnGestureListener(){
                 @Override
                 public boolean onDown(MotionEvent e) {
@@ -45,11 +82,37 @@ public class learnactivity extends AppCompatActivity {
                     try {
                         if(Math.abs(xdiff)>Math.abs(ydiff)){
                             if(Math.abs(xdiff)>threshold && Math.abs(velocityX)>velocity_thtrshold){
-                                if(xdiff>0){
-                                    textview.setText("Swipe right");
+                                if (xdiff>0){
+                                    count[0]--;
+//                                    swipe right
+                                    if(count[0]<0){
+                                        count[0]=0;
+                                    }
+                                    imgviewgal.setImageDrawable(getDrawable(resourceidlist.get(count[0])));
+                                    progress(count[0]);
                                 }
                                 else {
-                                    textview.setText("Swipe left");
+//                                    swipe left
+                                    count[0]++;
+                                    if(count[0]>26){
+                                        count[0]=26;
+                                    }
+                                    imgviewgal.setImageDrawable(getDrawable(resourceidlist.get(count[0])));
+                                    progress(count[0]);
+                                    if(count[0]==26){
+                                        Handler handler=new Handler();
+                                        handler.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                try {
+                                                    Thread.sleep(1000);
+                                                    openlearncongtsativ();
+                                                } catch (InterruptedException e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        });
+                                    }
                                 }
                                 return true;
                             }
@@ -57,9 +120,9 @@ public class learnactivity extends AppCompatActivity {
                         else {
                             if(Math.abs(ydiff)>threshold && Math.abs(velocityY)>velocity_thtrshold){
                                 if(ydiff>0){
-                                    textview.setText("Swipe Down");
+                                    int a=1;
                                 }else{
-                                    textview.setText("Swipe up");
+                                    int b=2;
                                 }
                                 return true;
                             }
@@ -72,6 +135,17 @@ public class learnactivity extends AppCompatActivity {
             };
             gestureDetector=new GestureDetector(listener);
             view.setOnTouchListener(this);
+
+        }
+
+        public void openlearncongtsativ(){
+            Intent intent=new Intent(learnactivity.this,learncongratsactivity.class);
+            startActivity(intent);
+        }
+        public void progress(Integer counter){
+            progressBar=findViewById(R.id.progressbar);
+            progressBar.getProgressDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
+            progressBar.setProgress(counter);
 
         }
 

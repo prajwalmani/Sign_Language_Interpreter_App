@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sli">
 
+    <uses-sdk android:minSdkVersion="21" />
+
     <uses-feature android:name="android.hardware.camera2" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -15,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SLI">
-        <activity android:name=".learnactivity"></activity>
+        <activity android:name=".learncongratsactivity"></activity>
+        <activity android:name=".learnactivity" />
         <activity android:name=".aboutusactivitiy" />
         <activity android:name=".speakactivity" />
         <activity android:name=".predictactivity" />
