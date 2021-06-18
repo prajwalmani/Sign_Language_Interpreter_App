@@ -19,6 +19,7 @@ form.addEventListener("submit", function(event) {
         img.src = content.data[0].images.downsized.url;
         // img.alt = content.data[0].title;
         // fc.textContent = content.data[0].title;
+        img.style.width='100px';
         fig.appendChild(img);
         // fig.appendChild(fc);
         let out = document.querySelector(".out");
