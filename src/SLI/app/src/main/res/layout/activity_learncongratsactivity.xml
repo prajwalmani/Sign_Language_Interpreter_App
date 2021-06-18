@@ -7,12 +7,53 @@
     tools:context=".learncongratsactivity">
 
     <ImageView
-        android:id="@+id/congrarsimgview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/predictimgview"
+        android:layout_width="414dp"
+        android:layout_height="283dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/predictlinkbtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/learncongrats" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/predictact" />
+
+    <Button
+        android:id="@+id/predictlinkbtn"
+        android:layout_width="334dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="4dp"
+        android:text="Predict"
+        android:textSize="50sp"
+        app:backgroundTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/predictimgview" />
+
+    <ImageView
+        android:id="@+id/speakimgview"
+        android:layout_width="420dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/predictlinkbtn"
+        app:srcCompat="@drawable/speackactiv" />
+
+    <Button
+        android:id="@+id/sppeaklinkbtn"
+        android:layout_width="334dp"
+        android:layout_height="98dp"
+        android:text="Speak"
+        android:textSize="50sp"
+        app:backgroundTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speakimgview"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

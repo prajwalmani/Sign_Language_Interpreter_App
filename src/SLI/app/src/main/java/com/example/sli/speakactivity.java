@@ -102,14 +102,14 @@ public class speakactivity extends AppCompatActivity {
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
                         if(!hasFocus){
-                            String url=giphy_url;
+                            String url="file:///android_asset/index.html";
                             String searchterm=speechtext.getText().toString();
                             webView.setWebViewClient(new WebViewClient(){
                                 public void onPageFinished(WebView view, String url){
                                     webView.loadUrl("javascript:giphy('" + searchterm + "')");
                                 }
                             });
-                            speechtext.setText("");
+                            speechtext.setText(" ");
                         }
                     }
                 });
