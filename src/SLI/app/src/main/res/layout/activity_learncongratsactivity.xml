@@ -6,47 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".learncongratsactivity">
 
-    <ImageView
-        android:id="@+id/predictimgview"
-        android:layout_width="414dp"
-        android:layout_height="283dp"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/predictlinkbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/predictact" />
-
     <Button
         android:id="@+id/predictlinkbtn"
         android:layout_width="334dp"
         android:layout_height="98dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:text="Predict"
         android:textSize="50sp"
         app:backgroundTint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/predictimgview" />
-
-    <ImageView
-        android:id="@+id/speakimgview"
-        android:layout_width="420dp"
-        android:layout_height="245dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/predictlinkbtn"
-        app:srcCompat="@drawable/speackactiv" />
+        app:layout_constraintTop_toBottomOf="@+id/predicttxt" />
 
     <Button
         android:id="@+id/sppeaklinkbtn"
         android:layout_width="334dp"
         android:layout_height="98dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="44dp"
         android:text="Speak"
         android:textSize="50sp"
         app:backgroundTint="#000000"
@@ -54,6 +32,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/speakimgview"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/speaktxt" />
+
+    <TextView
+        android:id="@+id/predicttxt"
+        android:layout_width="370dp"
+        android:layout_height="201dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="25dp"
+        android:text="Well that's the end of the road here.Try out our mode and check out how well it works in predict feature!."
+        android:textAlignment="center"
+        android:textColor="#050505"
+        android:listSelector="#00000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/speaktxt"
+        android:layout_width="378dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:text="    Or wanna checkout more signs try out our speak feature."
+        android:textAlignment="center"
+        android:textColor="#050505"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:listSelector="#00000000"
+        app:layout_constraintBottom_toTopOf="@+id/sppeaklinkbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/predictlinkbtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

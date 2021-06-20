@@ -17,8 +17,8 @@
         android:id="@+id/progressbar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:background="#000"
-        android:padding="10dp"
+
+        android:layout_height="65dp"
         android:max="26"
-        android:layout_height="65dp" />
+        android:paddingTop="25dp" />
 </RelativeLayout>

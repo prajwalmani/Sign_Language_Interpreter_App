@@ -144,6 +144,7 @@ public class learnactivity<counter> extends AppCompatActivity {
         }
         public void progress(Integer counter){
             progressBar=findViewById(R.id.progressbar);
+            progressBar.setScaleY(5f);
             progressBar.getProgressDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
             progressBar.setProgress(counter);
 
