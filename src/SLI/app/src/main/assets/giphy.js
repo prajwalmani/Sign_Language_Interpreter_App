@@ -15,6 +15,7 @@ function giphy(androidsearchterm) {
         let fc = document.createElement("figcaption");
         img.src = content.data[0].images.downsized.url;
         img.style.width='340px';
+        img.style.height='400px';
         fig.appendChild(img);
         let out = document.querySelector(".out");
         out.insertAdjacentElement("afterbegin", fig);

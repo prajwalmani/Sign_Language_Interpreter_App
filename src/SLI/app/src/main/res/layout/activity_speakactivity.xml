@@ -9,8 +9,8 @@
 
     <WebView
         android:id="@+id/webview"
-        android:layout_width="408dp"
-        android:layout_height="293dp"
+        android:layout_width="421dp"
+        android:layout_height="512dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -24,6 +24,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:hint="Enter the word!"
+        android:imeOptions="actionSearch"
         android:singleLine="true"
         android:textColor="#050505"
         android:textSize="25sp"
