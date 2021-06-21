@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -16,6 +17,11 @@ import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.textservice.SentenceSuggestionsInfo;
+import android.view.textservice.SpellCheckerSession;
+import android.view.textservice.SuggestionsInfo;
+import android.view.textservice.TextInfo;
+import android.view.textservice.TextServicesManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
@@ -23,10 +29,11 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-public class speakactivity extends AppCompatActivity {
+public class speakactivity extends AppCompatActivity implements SpellCheckerSession.SpellCheckerSessionListener {
     WebView webView;
     EditText speechtext;
-
+    SpellCheckerSession mscs;
+    ArrayList<String> buff_data=new ArrayList<>();
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +47,6 @@ public class speakactivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(giphy_url);
         webView.setWebViewClient(new WebViewClient());
-        ArrayList<String> buff_data=new ArrayList<>();
         buff_data.add("Hello");
         load_gif(buff_data);
         speechtext.setOnKeyListener(new View.OnKeyListener() {
@@ -49,12 +55,15 @@ public class speakactivity extends AppCompatActivity {
                 if(event.getAction()==KeyEvent.ACTION_DOWN && keyCode==KeyEvent.KEYCODE_ENTER){
                     buff_data.remove(0);
                     buff_data.add(speechtext.getText().toString());
+                    mscs.getSentenceSuggestions(new TextInfo[]{new TextInfo(speechtext.getText().toString())}, 1);
                     load_gif(buff_data);
+                    speechtext.setText(buff_data.get(0));
                     return true;
                 }
                 return false;
             }
         });
+
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,new String[]{
                     Manifest.permission.RECORD_AUDIO
@@ -157,5 +166,46 @@ public class speakactivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void onResume() {
+        super.onResume();
+        final TextServicesManager tsm=(TextServicesManager) getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
+        mscs=tsm.newSpellCheckerSession(null,null,this,true);
+
+    }
+
+    public void onPause(){
+        super.onPause();
+        if(mscs!=null){
+            mscs.close();
+        }
+    }
+
+
+//        public void getSentenceSuggestions(final SuggestionsInfo[] arg0){}
+
+    @Override
+    public void onGetSuggestions(final SuggestionsInfo[] arg0) {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void onGetSentenceSuggestions(SentenceSuggestionsInfo[] arg0) {
+        final StringBuilder sb = new StringBuilder();
+        for(int i=0;i<arg0.length;++i){
+            final int len=arg0[i].getSuggestionsCount();
+            sb.append('\n');
+            for(int j=0;j<len;++j){
+                sb.append(","+arg0[i].getSuggestionsInfoAt(j));
+            }
+        }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                buff_data.remove(0);
+                buff_data.add(sb.toString());
+            }
+        });
     }
 }
