@@ -56,4 +56,6 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
     implementation 'org.tensorflow:tensorflow-lite:2.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.1.0'
+
 }

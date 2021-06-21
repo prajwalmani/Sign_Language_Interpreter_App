@@ -7,33 +7,41 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.textservice.SentenceSuggestionsInfo;
-import android.view.textservice.SpellCheckerSession;
-import android.view.textservice.SuggestionsInfo;
-import android.view.textservice.TextInfo;
-import android.view.textservice.TextServicesManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class speakactivity extends AppCompatActivity implements SpellCheckerSession.SpellCheckerSessionListener {
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
+public class speakactivity extends AppCompatActivity {
     WebView webView;
     EditText speechtext;
-    SpellCheckerSession mscs;
     ArrayList<String> buff_data=new ArrayList<>();
+    OkHttpClient client = new OkHttpClient();
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +62,9 @@ public class speakactivity extends AppCompatActivity implements SpellCheckerSess
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if(event.getAction()==KeyEvent.ACTION_DOWN && keyCode==KeyEvent.KEYCODE_ENTER){
                     buff_data.remove(0);
+                    spellcheck(speechtext.getText().toString());
                     buff_data.add(speechtext.getText().toString());
-                    mscs.getSentenceSuggestions(new TextInfo[]{new TextInfo(speechtext.getText().toString())}, 1);
                     load_gif(buff_data);
-                    speechtext.setText(buff_data.get(0));
                     return true;
                 }
                 return false;
@@ -167,45 +174,36 @@ public class speakactivity extends AppCompatActivity implements SpellCheckerSess
         });
 
     }
+    public void spellcheck(String sentence){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        MediaType mediaType = MediaType.parse("application/json");
+        RequestBody body = RequestBody.create(mediaType, "{\t\"language\": \"enUS\",\t\"fieldvalues\": "+sentence+",\t\"config\": {\t\t\"forceUpperCase\": false,\t\t\"ignoreIrregularCaps\": false,\t\t\"ignoreFirstCaps\": true,\t\t\"ignoreNumbers\": true,\t\t\"ignoreUpper\": false,\t\t\"ignoreDouble\": false,\t\t\"ignoreWordsWithNumbers\": true\t} }");
+        Request request = new Request.Builder()
+        .url("https://jspell-checker.p.rapidapi.com/check")
+        .post(body)
+        .addHeader("content-type", "application/json")
+        .addHeader("x-rapidapi-key", "e2be155a48msha5f36a50e5a0239p192aefjsn5df12b82562e")
+        .addHeader("x-rapidapi-host", "jspell-checker.p.rapidapi.com")
+        .build();
 
-    public void onResume() {
-        super.onResume();
-        final TextServicesManager tsm=(TextServicesManager) getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
-        mscs=tsm.newSpellCheckerSession(null,null,this,true);
+        try {
+            Response response = client.newCall(request).execute();
+            String res=response.body().string();
+            JSONObject JObject=new JSONObject(res);
+            JSONArray jsonArray=JObject.getJSONArray("elements");
+            JSONObject jsonid=jsonArray.getJSONObject(0);
+            JSONArray jsonsuggestions=jsonid.getJSONArray("suggestions");
+            String suggestedtext= (String) jsonsuggestions.get(0);
+            speechtext.setText(suggestedtext);
 
-    }
-
-    public void onPause(){
-        super.onPause();
-        if(mscs!=null){
-            mscs.close();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
         }
+
+
     }
 
 
-//        public void getSentenceSuggestions(final SuggestionsInfo[] arg0){}
 
-    @Override
-    public void onGetSuggestions(final SuggestionsInfo[] arg0) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void onGetSentenceSuggestions(SentenceSuggestionsInfo[] arg0) {
-        final StringBuilder sb = new StringBuilder();
-        for(int i=0;i<arg0.length;++i){
-            final int len=arg0[i].getSuggestionsCount();
-            sb.append('\n');
-            for(int j=0;j<len;++j){
-                sb.append(","+arg0[i].getSuggestionsInfoAt(j));
-            }
-        }
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                buff_data.remove(0);
-                buff_data.add(sb.toString());
-            }
-        });
-    }
 }
