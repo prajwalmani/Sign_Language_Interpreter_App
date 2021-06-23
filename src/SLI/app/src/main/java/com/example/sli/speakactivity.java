@@ -24,6 +24,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,9 +38,7 @@ import java.util.ArrayList;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class speakactivity extends AppCompatActivity {
     WebView webView;
@@ -62,7 +65,6 @@ public class speakactivity extends AppCompatActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if(event.getAction()==KeyEvent.ACTION_DOWN && keyCode==KeyEvent.KEYCODE_ENTER){
                     buff_data.remove(0);
-                    spellcheck(speechtext.getText().toString());
                     buff_data.add(speechtext.getText().toString());
                     load_gif(buff_data);
                     return true;
@@ -168,41 +170,13 @@ public class speakactivity extends AppCompatActivity {
         webView.loadUrl(url);
         webView.setWebViewClient(new WebViewClient(){
             public void onPageFinished(WebView view, String url){
-                webView.loadUrl("javascript:giphy('" + searchterm + "')");
+                webView.loadUrl("javascript:spellcheckngify('" + searchterm + "')");
 
             }
         });
 
     }
-    public void spellcheck(String sentence){
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, "{\t\"language\": \"enUS\",\t\"fieldvalues\": "+sentence+",\t\"config\": {\t\t\"forceUpperCase\": false,\t\t\"ignoreIrregularCaps\": false,\t\t\"ignoreFirstCaps\": true,\t\t\"ignoreNumbers\": true,\t\t\"ignoreUpper\": false,\t\t\"ignoreDouble\": false,\t\t\"ignoreWordsWithNumbers\": true\t} }");
-        Request request = new Request.Builder()
-        .url("https://jspell-checker.p.rapidapi.com/check")
-        .post(body)
-        .addHeader("content-type", "application/json")
-        .addHeader("x-rapidapi-key", "e2be155a48msha5f36a50e5a0239p192aefjsn5df12b82562e")
-        .addHeader("x-rapidapi-host", "jspell-checker.p.rapidapi.com")
-        .build();
 
-        try {
-            Response response = client.newCall(request).execute();
-            String res=response.body().string();
-            JSONObject JObject=new JSONObject(res);
-            JSONArray jsonArray=JObject.getJSONArray("elements");
-            JSONObject jsonid=jsonArray.getJSONObject(0);
-            JSONArray jsonsuggestions=jsonid.getJSONArray("suggestions");
-            String suggestedtext= (String) jsonsuggestions.get(0);
-            speechtext.setText(suggestedtext);
-
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
-
-
-    }
 
 
 

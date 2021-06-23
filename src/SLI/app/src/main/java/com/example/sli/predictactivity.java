@@ -37,6 +37,7 @@ import android.speech.tts.TextToSpeech;
 
 public class predictactivity extends AppCompatActivity {
     Button camerabtn;
+    Button samplesbtn;
     ImageView imageView;
     TextView textView;
     TextToSpeech textToSpeech;
@@ -59,6 +60,14 @@ public class predictactivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(intent,100);
+            }
+        });
+
+        samplesbtn=findViewById(R.id.samplesbtn);
+        samplesbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openpsampleactiv();
             }
         });
 
@@ -191,6 +200,7 @@ public class predictactivity extends AppCompatActivity {
             return "Try Again!";
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -223,5 +233,9 @@ public class predictactivity extends AppCompatActivity {
                 // TODO Handle the exception
             }
         }
+    }
+    private void openpsampleactiv() {
+        Intent intent =new Intent(this,samplesactivity.class);
+        startActivity(intent);
     }
 }
