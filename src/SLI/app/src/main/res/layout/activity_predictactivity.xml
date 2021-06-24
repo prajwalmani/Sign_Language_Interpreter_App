@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="366dp"
-        android:layout_height="349dp"
+        android:layout_width="392dp"
+        android:layout_height="409dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
@@ -23,32 +23,25 @@
         android:layout_height="69dp"
         android:text="Open Camera "
         android:textSize="25sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.113" />
 
     <TextView
         android:id="@+id/txtview"
         android:layout_width="374dp"
         android:layout_height="101dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center"
         android:textColor="#0B0A0A"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camerabtn" />
 
-    <Button
-        android:id="@+id/samplesbtn"
-        android:layout_width="293dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="12dp"
-        android:text="sample"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtview" />
 </androidx.constraintlayout.widget.ConstraintLayout>

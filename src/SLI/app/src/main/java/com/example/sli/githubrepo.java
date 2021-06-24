@@ -13,7 +13,7 @@ public class githubrepo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_githubrepo);
-        String github_url="https://github.com/prajwalmani/grandma_bot";
+        String github_url="https://github.com/prajwalmani/Sign_Language_Interpreter_App";
         WebView githubwebview;
         githubwebview=findViewById(R.id.githubwebview);
         githubwebview.getSettings().setJavaScriptEnabled(true);

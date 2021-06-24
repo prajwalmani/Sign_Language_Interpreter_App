@@ -37,7 +37,6 @@ import android.speech.tts.TextToSpeech;
 
 public class predictactivity extends AppCompatActivity {
     Button camerabtn;
-    Button samplesbtn;
     ImageView imageView;
     TextView textView;
     TextToSpeech textToSpeech;
@@ -63,13 +62,6 @@ public class predictactivity extends AppCompatActivity {
             }
         });
 
-        samplesbtn=findViewById(R.id.samplesbtn);
-        samplesbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openpsampleactiv();
-            }
-        });
 
 // Text to Speech
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -234,8 +226,5 @@ public class predictactivity extends AppCompatActivity {
             }
         }
     }
-    private void openpsampleactiv() {
-        Intent intent =new Intent(this,samplesactivity.class);
-        startActivity(intent);
-    }
+
 }
