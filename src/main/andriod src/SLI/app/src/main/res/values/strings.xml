@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">SLI</string>
-    <string name="tab_text_1">Predict</string>
-    <string name="tab_text_2">Speak</string>
-    <string name="tab_text_3">Learn</string>
-</resources>
