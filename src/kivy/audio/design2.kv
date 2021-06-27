@@ -1,0 +1,41 @@
+<AudioTool>:
+    orientation:'vertical'
+    Label:
+        size_hint:1,.4
+        id:display_label
+        text:'00:00'    
+
+    
+    BoxLayout:
+        pos_hint:{'x':.1,'y':.2}
+       
+        TextInput:
+            pos_hint:{'x':.1,'y':.3}
+            size_hint:.5,.2
+            id:usr_input
+            hint_text:'Enter Number less than or = 60'
+            text:'0'
+            on_text:root.enforce_numeric()
+
+        Switch:
+            
+            id:duration_switch
+
+             
+
+    RelativeLayout:
+        
+        Button:
+            pos_hint:{'x':.1,'y':.3}
+            size_hint:.4,.2
+            id:start_btn
+            text:'START'  
+            on_release:root.startRecording_clock()
+
+        Button:
+            pos_hint:{'x':.5,'y':.3}
+            size_hint:.4,.2
+            id:stop_btn
+            text:'STOP'
+            on_release:root.stopRecording()
+            disabled:True              

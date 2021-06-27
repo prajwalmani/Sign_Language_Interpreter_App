@@ -1,0 +1,17 @@
+# the design  for giving asstheitc look (same as css)
+<CameraClick>:
+    orientation: 'vertical'
+    Camera:
+        id: camera
+        resolution: (640, 480)
+        play: False
+    ToggleButton:
+        text: 'Play'
+        on_press: camera.play = not camera.play
+        size_hint_y: None
+        height: '48dp'
+    Button:
+        text: 'Capture'
+        size_hint_y: None
+        height: '48dp'
+        on_press: root.capture()
