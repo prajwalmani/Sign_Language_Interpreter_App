@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>L.e195a11a-ae6b-11eb-acff-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\L.e195a11a-ae6b-11eb-acff-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>L</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>41</xmin>
+			<ymin>126</ymin>
+			<xmax>287</xmax>
+			<ymax>409</ymax>
+		</bndbox>
+	</object>
+</annotation>

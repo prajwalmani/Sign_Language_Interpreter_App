@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>ILY.e5d04ec8-b008-11eb-96a1-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\ILY.e5d04ec8-b008-11eb-96a1-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>I Love You</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>259</xmin>
+			<ymin>149</ymin>
+			<xmax>445</xmax>
+			<ymax>355</ymax>
+		</bndbox>
+	</object>
+</annotation>

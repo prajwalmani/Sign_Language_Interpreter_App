@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>D.e320a918-ae41-11eb-a208-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\D.e320a918-ae41-11eb-a208-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>D</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>313</xmin>
+			<ymin>94</ymin>
+			<xmax>575</xmax>
+			<ymax>389</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>K.e560b164-ae66-11eb-85c8-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\K.e560b164-ae66-11eb-85c8-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>K</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>110</xmin>
+			<ymin>119</ymin>
+			<xmax>259</xmax>
+			<ymax>312</ymax>
+		</bndbox>
+	</object>
+</annotation>

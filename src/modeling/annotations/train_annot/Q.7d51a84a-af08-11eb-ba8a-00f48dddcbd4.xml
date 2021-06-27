@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>Q.7d51a84a-af08-11eb-ba8a-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\Q.7d51a84a-af08-11eb-ba8a-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Q</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>310</xmin>
+			<ymin>163</ymin>
+			<xmax>414</xmax>
+			<ymax>332</ymax>
+		</bndbox>
+	</object>
+</annotation>

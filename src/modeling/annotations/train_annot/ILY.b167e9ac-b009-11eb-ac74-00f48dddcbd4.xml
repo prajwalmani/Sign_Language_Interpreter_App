@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>ILY.b167e9ac-b009-11eb-ac74-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\ILY.b167e9ac-b009-11eb-ac74-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>I Love You</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>266</xmin>
+			<ymin>190</ymin>
+			<xmax>446</xmax>
+			<ymax>386</ymax>
+		</bndbox>
+	</object>
+</annotation>

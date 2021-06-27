@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>C.e314d2f8-ae38-11eb-9dec-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\C.e314d2f8-ae38-11eb-9dec-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>C</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>247</xmin>
+			<ymin>119</ymin>
+			<xmax>477</xmax>
+			<ymax>480</ymax>
+		</bndbox>
+	</object>
+</annotation>

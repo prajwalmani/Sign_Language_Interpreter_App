@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>V.fb60db8c-af41-11eb-89d7-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\test\V.fb60db8c-af41-11eb-89d7-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>V</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>104</xmin>
+			<ymin>140</ymin>
+			<xmax>216</xmax>
+			<ymax>425</ymax>
+		</bndbox>
+	</object>
+</annotation>

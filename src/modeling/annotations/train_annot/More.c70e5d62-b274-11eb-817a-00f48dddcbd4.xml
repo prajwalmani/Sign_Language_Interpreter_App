@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>More.c70e5d62-b274-11eb-817a-00f48dddcbd4.jpg</filename>
+	<path>D:\jupyternotebooks\mainsrc\Tensorflow\workspace\images\train\More.c70e5d62-b274-11eb-817a-00f48dddcbd4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>More</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>176</xmin>
+			<ymin>362</ymin>
+			<xmax>483</xmax>
+			<ymax>464</ymax>
+		</bndbox>
+	</object>
+</annotation>
