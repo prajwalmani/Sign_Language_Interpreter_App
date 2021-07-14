@@ -2,11 +2,13 @@ package com.example.sli;
 import com.example.sli.ml.Model;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -40,6 +42,7 @@ public class predictactivity extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
     TextToSpeech textToSpeech;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,17 +51,38 @@ public class predictactivity extends AppCompatActivity {
         camerabtn=(Button)findViewById(R.id.camerabtn);
         imageView=(ImageView)findViewById(R.id.imageView);
         textView=findViewById(R.id.txtview);
+        builder=new AlertDialog.Builder(this);
+        builder.setTitle("Note");
+        builder.setMessage("Try to capture an image which focus only on the hand sign\nOur small model is still learning!\nIf you want to learn sign language then checkout our learn feature");
         if (ContextCompat.checkSelfPermission(predictactivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(predictactivity.this,new String[]{
                     Manifest.permission.CAMERA},
                     100);
-
         }
         camerabtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,100);
+                builder.setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        startActivityForResult(intent,100);
+                    }
+                });
+                builder.setNegativeButton("Samples", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.setNeutralButton("Learn", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        openlearnactiv();
+                    }
+                });
+
+
             }
         });
 
@@ -104,6 +128,11 @@ public class predictactivity extends AppCompatActivity {
         }
         return labellist.get(pos);
     }
+    public void openlearnactiv(){
+        Intent intent=new Intent(this,learnactivity.class);
+        startActivity(intent);
+    }
+
 
 
     public String labelcond(int pos){
