@@ -74,8 +74,8 @@ public class predictactivity extends AppCompatActivity {
                 builder.setNegativeButton("Samples", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                     dialog.dismiss();
+                    opensampleactiv();
                     }
                 });
                 builder.setNeutralButton("Learn", new DialogInterface.OnClickListener() {
@@ -132,10 +132,17 @@ public class predictactivity extends AppCompatActivity {
         }
         return labellist.get(pos);
     }
+
     public void openlearnactiv(){
         Intent intent=new Intent(this,learnactivity.class);
         startActivity(intent);
     }
+
+    public void opensampleactiv(){
+        Intent intent=new Intent(this,samplesActivity.class);
+        startActivity(intent);
+    }
+
 
 
 
