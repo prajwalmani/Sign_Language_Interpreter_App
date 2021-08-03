@@ -2,6 +2,7 @@ package com.example.sli;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,7 @@ public class samplesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 count[0]++;
-                sampleimgview.setImageDrawable(getDrawable(R.drawable.Q));
+                sampleimgview.setImageDrawable(getDrawable(R.drawable.q));
 
             }
         });
@@ -32,7 +33,18 @@ public class samplesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 count[0]--;
-                sampleimgview.setImageDrawable(getDrawable(R.drawable.R));
+                sampleimgview.setImageDrawable(getDrawable(R.drawable.r));
+
+            }
+        });
+
+        sampleimgview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int imageviewresid=sampleimgview.getId();
+                Intent intent=new Intent(samplesActivity.this,samplepredictActivity.class);
+                intent.putExtra("imageviewresid",imageviewresid);
+                startActivity(intent);
 
             }
         });

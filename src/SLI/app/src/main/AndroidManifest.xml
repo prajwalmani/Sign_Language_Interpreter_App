@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".samplesActivity"></activity>
+        <activity android:name=".samplepredictActivity"></activity>
+        <activity android:name=".samplesActivity" />
         <activity android:name=".githubrepo" />
         <activity android:name=".learncongratsactivity" />
         <activity android:name=".learnactivity" />
