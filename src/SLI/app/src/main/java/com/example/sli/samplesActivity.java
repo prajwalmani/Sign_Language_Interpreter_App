@@ -2,51 +2,19 @@ package com.example.sli;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.webkit.WebView;
 
-public class samplesActivity extends AppCompatActivity {
-    Button prevbtn;
-    Button nextbtn;
-    ImageView sampleimgview;
+public class samplesactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_samples);
-        prevbtn=findViewById(R.id.prevbtn);
-        nextbtn=findViewById(R.id.nxtbtn);
-        sampleimgview=findViewById(R.id.sampleimgview);
-        final int[] count = {0};
-        nextbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count[0]++;
-                sampleimgview.setImageDrawable(getDrawable(R.drawable.q));
-
-            }
-        });
-        prevbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count[0]--;
-                sampleimgview.setImageDrawable(getDrawable(R.drawable.r));
-
-            }
-        });
-
-        sampleimgview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int imageviewresid=sampleimgview.getId();
-                Intent intent=new Intent(samplesActivity.this,samplepredictActivity.class);
-                intent.putExtra("imageviewresid",imageviewresid);
-                startActivity(intent);
-
-            }
-        });
+        setContentView(R.layout.activity_samplesactivity);
+        String github_url="https://github.com/prajwalmani/Sign_Language_Interpreter_App/tree/master/samples";
+        WebView samplewebview;
+        samplewebview=findViewById(R.id.samplewebview);
+        samplewebview.getSettings().setJavaScriptEnabled(true);
+        samplewebview.loadUrl(github_url);
     }
 }

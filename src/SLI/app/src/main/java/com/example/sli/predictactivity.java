@@ -139,12 +139,9 @@ public class predictactivity extends AppCompatActivity {
     }
 
     public void opensampleactiv(){
-        Intent intent=new Intent(this,samplesActivity.class);
+        Intent intent=new Intent(this,samplesactivity.class);
         startActivity(intent);
     }
-
-
-
 
     public String labelcond(int pos){
 //        I was jobless and bored so took this approch
