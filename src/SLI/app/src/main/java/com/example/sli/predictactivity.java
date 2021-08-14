@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -53,7 +54,7 @@ public class predictactivity extends AppCompatActivity {
         textView=findViewById(R.id.txtview);
         builder=new AlertDialog.Builder(this);
         builder.setTitle("Note");
-        builder.setMessage("Try to capture an image which focuses only on the hand sign\nOur small model is still learning!\nIf you want to learn sign language, then checkout our learn feature");
+        builder.setMessage("* Try to capture an image which focuses only on the hand sign\n* Our small model is still learning!\n* If you want to learn sign language, then checkout our learn feature.\n* Even we have few signs samples for you to try out with our app.");
         if (ContextCompat.checkSelfPermission(predictactivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(predictactivity.this,new String[]{
                     Manifest.permission.CAMERA},
@@ -73,9 +74,9 @@ public class predictactivity extends AppCompatActivity {
                 });
                 builder.setNegativeButton("Samples", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                    opensampleactiv();
+                    public void onClick(DialogInterface dialog, int which) { ;
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/prajwalmani/Sign_Language_Interpreter_App/tree/master/samples"));
+                        startActivity(browserIntent);
                     }
                 });
                 builder.setNeutralButton("Learn", new DialogInterface.OnClickListener() {
@@ -138,10 +139,6 @@ public class predictactivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void opensampleactiv(){
-        Intent intent=new Intent(this,samplesactivity.class);
-        startActivity(intent);
-    }
 
     public String labelcond(int pos){
 //        I was jobless and bored so took this approch
