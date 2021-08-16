@@ -5,7 +5,13 @@
 
 ### SLI App is an android application that helps out deaf and dumb people to communicate with others using deep learning technics.
 
-Some Backgroung info about the project:
+### If you want to test out the app here is the apk of it: [SLI APP](https://github.com/prajwalmani/Sign_Language_Interpreter_App/blob/master/SLI%20APP.apk) (Hopefully soon we will be launching it on google play store!.)
+
+### And if you want to see just the demo of the app then there is the [Youtube video]() for it. I would highly suggest to download the apk and try out.
+
+### Thank you for checking out the repo!. If you like the project then star the repo and lets us know that you appreciate our work!
+
+Some Background info about the project:
 * This is my final year captsone project under Visvesvaraya Technological University(VTU)
 * Subject name : Project Work Phase I and II
 * Subject code : 17CSP78 & 17CSP85
@@ -23,14 +29,16 @@ Some Backgroung info about the project:
   | Android Programming Language  	| Java         	|
   
 * Modeling :
-   | Question                    	| Answer                   	|
-   |-----------------------------	|--------------------------	|
-   | Model Name                  	| VGG16                    	|
-   | Technique Used              	| Transfer Learning        	|
-   | Dataset                     	| Custom Dataset           	|
-   | Labels                      	| 40                       	|
-   | No of images in each label  	| 1000                     	|
-   | Image Pre-Processing        	| Keras Imagedatagenerator 	|
-   | Accuracy                    	| 99%                      	|
+   | Question                    	| Answer                        	|
+   |-----------------------------	|-------------------------------	|
+   | Model Name                  	| VGG16                         	|
+   | Technique Used              	| Transfer Learning             	|
+   | Dataset                     	| Custom Dataset                	|
+   | Labels                      	| 40                            	|
+   | No of images in each label  	| 1000                          	|
+   | Image Pre-Processing        	| Keras Imagedatagenerator      	|
+   | Accuracy                    	| 99%                           	|
+   | Quantization                	| int8 and foat32 using tflite  	|
+
 
 
