@@ -19,5 +19,18 @@ Some Backgroung info about the project:
   | Technologies                  	| Version/Type 	|
   |-------------------------------	|--------------	|
   | Python Version                	| 3.7.9        	|
-  | Minimum Android SDK/API level 	| 19(KitKat)   	|
+  | Minimum Android SDK/API level 	| 19/KitKat    	|
+  | Android Programming Language  	| Java         	|
+  
+* Modeling :
+   | Question                    	| Answer                   	|
+   |-----------------------------	|--------------------------	|
+   | Model Name                  	| VGG16                    	|
+   | Technique Used              	| Transfer Learning        	|
+   | Dataset                     	| Custom Dataset           	|
+   | Labels                      	| 40                       	|
+   | No of images in each label  	| 1000                     	|
+   | Image Pre-Processing        	| Keras Imagedatagenerator 	|
+   | Accuracy                    	| 99%                      	|
+
 
