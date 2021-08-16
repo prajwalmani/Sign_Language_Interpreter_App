@@ -7,12 +7,12 @@
 
 ### If you want to test out the app here is the apk of it: [SLI APP](https://github.com/prajwalmani/Sign_Language_Interpreter_App/blob/master/SLI%20APP.apk) (Hopefully soon we will be launching it on google play store!.)
 
-### And if you want to see just the demo of the app then there is the [Youtube video]() for it. I would highly suggest to download the apk and try out.
+### And if you want to see just the demo of the app then there is the [Youtube video](https://www.youtube.com/watch?v=nTd5xGtzOcM) for it. I would highly suggest to download the apk and try out.
 
 ### Thank you for checking out the repo!. If you like the project then star the repo and lets us know that you appreciate our work!
 
 Some background info about the project:
-* This is my final year captsone project under Visvesvaraya Technological University(VTU)
+* This is my final year capstone project under Visvesvaraya Technological University(VTU)
 * Subject name : Project Work Phase I and II
 * Subject code : 17CSP78 & 17CSP85
 * Teammates :
