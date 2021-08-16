@@ -11,7 +11,7 @@
 
 ### Thank you for checking out the repo!. If you like the project then star the repo and lets us know that you appreciate our work!
 
-Some Background info about the project:
+Some background info about the project:
 * This is my final year captsone project under Visvesvaraya Technological University(VTU)
 * Subject name : Project Work Phase I and II
 * Subject code : 17CSP78 & 17CSP85
@@ -39,6 +39,19 @@ Some Background info about the project:
    | Image Pre-Processing        	| Keras Imagedatagenerator      	|
    | Accuracy                    	| 99%                           	|
    | Quantization                	| int8 and foat32 using tflite  	|
+   
+* List of all the labels that our app can clasiify 
 
+   |   A   	|      B     	|      C     	|     D     	|   E   	|
+   |:-----:	|:----------:	|:----------:	|:---------:	|:-----:	|
+   |   F   	|      G     	|      H     	|     I     	|   J   	|
+   |   K   	|      L     	|      M     	|     N     	|   O   	|
+   |   P   	|      Q     	|      R     	|     S     	|   T   	|
+   |   U   	|      V     	|      W     	|     X     	|   Y   	|
+   |   Z   	|  Airplane  	|  Bathroom  	|    Bye    	| Hello 	|
+   | Help  	|    Hurt    	| I Love You 	|    More   	|   No  	|
+   | Play  	| Something  	|   Sorry    	| Thank You 	|  Yes  	|
+
+* The Giphy APi can retrive sign gifs from Robert([signwithrobert](https://giphy.com/signwithrobert)) profile and please check out his profile on giphy website if you want to learn more about sign language.
 
 
